@@ -1,0 +1,229 @@
+body {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Arrange children in a column */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px,50px;;
+    background-color: #ecf0f1 ; /* Background color */
+}
+
+
+#greetingContainer {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    overflow: hidden;
+}
+
+#cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFD700; /* Golden Cover */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    transition: all 2s ease-in-out; /* For smooth sliding animation */
+}
+
+#cover.hidden {
+    transform: translateY(-100%); /* Slide the cover away */
+}
+
+#cover h2 {
+    font-size: 32px;
+    color: white;
+}
+
+#uploadedPhoto {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+#effects {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Firecracker blast animation */
+@keyframes blastAnimation {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-200px) scale(1);
+        opacity: 0;
+    }
+}
+
+.blast {
+    position: absolute;
+    animation: blastAnimation 2s ease-out infinite;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.star {
+    color: yellow;
+    font-size: 25px;
+}
+
+.heart {
+    color: red;
+    font-size: 20px;
+}
+
+#happyBirthdayText {
+    position: absolute;
+    font-weight:bold;
+    font-family: 'Pacifico', cursive;
+    font-size: 48px;
+    color: red;
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2), 8px 8px 0px rgba(0, 0, 0, 0.15);
+    bottom: 20px;
+    width: 100%;
+    
+    display: none;
+}
+
+/* Button and input layout */
+.controls-row {
+    display: flex; /* Use flex for horizontal alignment */
+    justify-content: center; /* Center the buttons */
+    margin-bottom: 10px;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+button {
+    padding: 8px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    max-width: 160px;
+    transition: background-color 0.3s; /* Removed scale effect */
+    margin: 5px; /* Space between buttons */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+button:hover, .upload-btn:hover {
+    background-color: #218838; /* No scaling */
+}
+
+.clear-all-btn {
+    background-color: #dc3545;
+}
+
+.clear-all-btn:hover {
+    background-color: #c82333;
+}
+
+  .Reveal{
+    background-color: #bb5fb2;
+}
+
+.Reveal:hover {
+    background-color: #9a058c;
+}
+
+  .Download{
+    background-color: #42b6c2;
+}
+
+.Download:hover {
+    background-color: #13a8b7;
+}
+
+
+.update{
+    background-color:#d4ac0d;
+}
+
+.update:hover {
+    background-color:#9a7d0a ;
+}
+button:focus {
+    outline: none;
+}
+
+/* Make buttons responsive on mobile */
+@media (max-width: 600px) {
+    .controls-row {
+        flex-direction: row; /* Ensure horizontal layout on mobile */
+    }
+
+    input {
+        width: 140px; /* Fixed width for the input */
+        margin: 5px; /* Space around input */
+    }
+
+    button {
+        font-size: 12px;
+        padding: 8px 12px;
+        max-width: none; /* Remove max-width for small screens */
+    }
+}
+
+.text1 {
+width:170px;
+    height: 30px;
+    border: gold solid 1px;
+}
+
+input[type="file"] {
+    display: none; /* Hide the default file input */
+}
+
+.upload-btn {
+    display: inline-block;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #44cda2;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.upload-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.upload-btn:active {
+    transform: translateY(1px);
+}
+
+.upload-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffb700; /* Focus effect */
+}
+
+  .text-3d-gradient {
+    font-family: Arial, sans-serif;
+    font-size: 35px;
+    background: linear-gradient(45deg, #0e8e8c , #f06595);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}

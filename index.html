@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>surprise Gift</title>
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="surprice.css">
+<body>
+    <div style="background-color:white; width:600px; border:gold solid 2px; border-radius:9px;">
+        <h3 class="text-3d-gradient">Create Your Surprise Greeting! </h3>
+        
+        
+        <div class="controls-row" >
+        <label for="uploadBtn" class="upload-btn">Upload Image</label>
+            <input type="file" class="upload-btn" id="uploadBtn" accept="image/*">
+            <button id="revealBtn" class="Reveal">Reveal Card</button>
+            <button id="downloadBtn"class="Download">Download Greeting</button>
+        </div>
+        <div class="controls-row" style="margin-top: 10px;">
+            <input type="text" id="customText" class="text1" placeholder="Enter your custom greeting">
+            <button id="updateTextBtn" class="update">Update Text</button>
+            <button id="clearBtn" class="clear-all-btn">Clear All</button>
+        </div>
+        
+        <div id="greetingContainer" style="display:none;">
+            <div id="cover">
+                <h2>Open to Reveal Your Surprise!</h2>
+            </div>
+            <img id="uploadedPhoto" src="" class="uploaded-image">
+            <div id="effects">
+                <!-- Firecracker blast effects will be dynamically created -->
+            </div>
+            <div id="happyBirthdayText">Happy Birthday!</div>
+        </div>
+        </div>
+        <script src="Surprice.js"></script> 
+    
+</body>
+</html>
