@@ -12,7 +12,7 @@ body {
 
 #greetingContainer {
     position: relative;
-    width: 600px;
+    width: 80%;
     height: 400px;
     margin: 0 auto;
     background-color: #fff;
@@ -94,7 +94,7 @@ body {
     position: absolute;
     font-weight:bold;
     font-family: 'Pacifico', cursive;
-    font-size: 48px;
+    font-size: 30px;
     color: red;
     text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2), 8px 8px 0px rgba(0, 0, 0, 0.15);
     bottom: 20px;
@@ -108,7 +108,7 @@ body {
     display: flex; /* Use flex for horizontal alignment */
     justify-content: center; /* Center the buttons */
     margin-bottom: 10px;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: wrap; /* Prevent wrapping */
 }
 
 button {
@@ -119,7 +119,7 @@ button {
     border-radius: 5px;
     font-size: 12px;
     cursor: pointer;
-    max-width: 160px;
+    max-width: 140px;
     transition: background-color 0.3s; /* Removed scale effect */
     margin: 5px; /* Space between buttons */
     white-space: nowrap; /* Prevent text from wrapping */
@@ -221,9 +221,42 @@ input[type="file"] {
 
   .text-3d-gradient {
     font-family: Arial, sans-serif;
-    font-size: 35px;
+    font-size: 25px;
     background: linear-gradient(45deg, #0e8e8c , #f06595);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+.instructions {
+    background-color: #fff;
+    line-height: 1.5;
+  margin-left: 10%;
+    text-align: left;
+    padding: 15px,20px;
+    margin-bottom: 20px;
+   
+    
+}
+
+.instructions h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.instructions ol {
+    padding-left: 20px;
+    color: #241f3f;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    font-size: small;
+    color: #2b2c2c;
+}
+
+
+
+.instructions strong {
+    color: #505570;
+
 }
