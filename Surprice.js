@@ -251,7 +251,7 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
         </div>
         <div id="happyBirthdayText">${customText}</div> <!-- Insert custom text here -->
     </div>
-
+<audio id="backgroundMusic" src="https://github.com/Satya199426/Surprise/blob/main/Devara%20Release%20Trailer%20Bgm%20Ringtone%20Download%20-%20MobCup.Com.Co.mp3" preload="auto" loop></audio>
     <button id="revealBtn" style="text-align:center;">Reveal Card</button>
 
     <script>
