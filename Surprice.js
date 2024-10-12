@@ -8,7 +8,7 @@ const greetingContainer = document.getElementById('greetingContainer');
 const happyBirthdayText = document.getElementById('happyBirthdayText');
 const updateTextBtn = document.getElementById('updateTextBtn');
 const customTextInput = document.getElementById('customText');
-const audio = new Audio('Devara Release Trailer Bgm Ringtone Download - MobCup.Com.Co.mp3');
+const audio = new Audio('https://github.com/Satya199426/Surprise/blob/main/Devara%20Release%20Trailer%20Bgm%20Ringtone%20Download%20-%20MobCup.Com.Co.mp3');
 
 // Colors for blast effects
 const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink'];
