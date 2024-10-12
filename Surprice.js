@@ -255,7 +255,7 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
     <button id="revealBtn" style="text-align:center;">Reveal Card</button>
 
     <script>
-    const audio = new Audio('Devara Release Trailer Bgm Ringtone Download - MobCup.Com.Co.mp3');
+    const audio = new Audio('https://github.com/Satya199426/Surprise/blob/main/Devara%20Release%20Trailer%20Bgm%20Ringtone%20Download%20-%20MobCup.Com.Co.mp3');
     
     // Reveal card functionality with text-to-speech and music
     document.getElementById('revealBtn').addEventListener('click', function () {
