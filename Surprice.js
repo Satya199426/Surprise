@@ -110,7 +110,7 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
 
             #greetingContainer {
                 position: relative;
-                width: 80%;
+                width: 95%;
                 height: 400px;
                 margin: 0 auto;
                 background-color: #fff;
