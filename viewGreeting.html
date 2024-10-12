@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Card Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ecf0f1;
+        }
+        #greetingContent {
+            margin: 20px auto;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div id="greetingContent"></div>
+
+    <script>
+        // Retrieve the greeting HTML from the URL
+        const params = new URLSearchParams(window.location.search);
+        const greetingHTML = params.get('greeting');
+
+        if (greetingHTML) {
+            // Insert the greeting HTML into the div
+            document.getElementById('greetingContent').innerHTML = decodeURIComponent(greetingHTML);
+        } else {
+            document.getElementById('greetingContent').innerText = "No greeting card found.";
+        }
+    </script>
+</body>
+</html>
