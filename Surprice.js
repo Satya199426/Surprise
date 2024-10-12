@@ -335,12 +335,12 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
     </html>
     `;
 
+    // Create a Blob from the HTML and trigger the download
     const blob = new Blob([cardHTML], { type: 'text/html' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'Surprise_Gift.html';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    a.download = 'Birthday_Greeting.html'; // Download name
+    a.click(); // Trigger the download
+    URL.revokeObjectURL(url); // Clean up URL
 });
