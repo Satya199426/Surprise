@@ -8,7 +8,7 @@ const greetingContainer = document.getElementById('greetingContainer');
 const happyBirthdayText = document.getElementById('happyBirthdayText');
 const updateTextBtn = document.getElementById('updateTextBtn');
 const customTextInput = document.getElementById('customText');
-const audio = new Audio('https://github.com/Satya199426/Surprise/blob/main/Devara%20Release%20Trailer%20Bgm%20Ringtone%20Download%20-%20MobCup.Com.Co.mp3');
+const audio = new Audio('Devara Release Trailer Bgm Ringtone Download - MobCup.Com.Co.mp3');
 
 // Colors for blast effects
 const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink'];
@@ -251,11 +251,11 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
         </div>
         <div id="happyBirthdayText">${customText}</div> <!-- Insert custom text here -->
     </div>
-<audio id="backgroundMusic" src="https://github.com/Satya199426/Surprise/blob/main/Devara%20Release%20Trailer%20Bgm%20Ringtone%20Download%20-%20MobCup.Com.Co.mp3" preload="auto" loop></audio>
+
     <button id="revealBtn" style="text-align:center;">Reveal Card</button>
 
     <script>
-    const audio = new Audio('https://github.com/Satya199426/Surprise/blob/main/Devara%20Release%20Trailer%20Bgm%20Ringtone%20Download%20-%20MobCup.Com.Co.mp3');
+    const audio = new Audio('Devara Release Trailer Bgm Ringtone Download - MobCup.Com.Co.mp3');
     
     // Reveal card functionality with text-to-speech and music
     document.getElementById('revealBtn').addEventListener('click', function () {
@@ -275,6 +275,7 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
             speakGreeting(customGreeting);
         }, 2000);
     });
+    
 
     // Text-to-Speech function
     function speakGreeting(text) {
