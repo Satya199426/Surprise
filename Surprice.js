@@ -8,9 +8,60 @@ const greetingContainer = document.getElementById('greetingContainer');
 const happyBirthdayText = document.getElementById('happyBirthdayText');
 const updateTextBtn = document.getElementById('updateTextBtn');
 const customTextInput = document.getElementById('customText');
+const audio = new Audio('Devara Release Trailer Bgm Ringtone Download - MobCup.Com.Co.mp3');
 
 // Colors for blast effects
 const colors = ['red', 'blue', 'green', 'yellow', 'purple', 'orange', 'pink'];
+
+// Handle image upload
+document.getElementById('uploadBtn').addEventListener('change', function (event) {
+    const files = event.target.files;
+    if (files.length > 0) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            uploadedPhoto.src = e.target.result; // Set image source
+            greetingContainer.style.display = 'block'; // Show greeting container
+            createBlastEffect(600); // Trigger effects
+        };
+        reader.readAsDataURL(files[0]);
+    }
+});
+
+// Clear all the effects and refresh the page
+clearBtn.addEventListener('click', function () {
+    location.reload(); // Refresh the page
+});
+
+// Reveal card functionality with text-to-speech and music
+revealBtn.addEventListener('click', function () {
+    const cover = document.getElementById('cover');
+    cover.classList.add('hidden');
+    
+    setTimeout(() => {
+        effects.style.display = 'block'; // Show effects
+        happyBirthdayText.style.display = 'block'; // Show text
+        
+        // Play the audio
+        audio.currentTime = 0; // Reset to the beginning
+    setTimeout(() => {
+        audio.play(); // Play background music
+    }, 3000); // 3 seconds delay
+
+        
+        // Play the voice for the greeting text
+        const customGreeting = customTextInput.value || "Happy Birthday!";
+        speakGreeting(customGreeting); // Call the text-to-speech function
+
+    }, 2000);
+});
+
+// Update custom text functionality
+updateTextBtn.addEventListener('click', function () {
+    const customText = customTextInput.value;
+    if (customText) {
+        happyBirthdayText.innerHTML = customText; // Update greeting text
+    }
+});
 
 // Create a random blast shape (star or heart)
 function createBlastShape() {
@@ -37,56 +88,32 @@ function createBlastShape() {
         : `${(containerWidth / 2) + Math.random() * (containerWidth / 2)}px`;
     div.style.bottom = '0px';
 
-    return div;
+    return div; // Return the created shape
 }
 
 // Create blast effect with specified number of symbols
 function createBlastEffect(count) {
     effects.innerHTML = ''; // Clear any existing effects
     for (let i = 0; i < count; i++) {
-        const shape = createBlastShape();
+        const shape = createBlastShape(); // Create the shape
         shape.style.animationDuration = `${Math.random() * 1 + 1.5}s`;
         shape.style.animationDelay = `${Math.random() * 0.5}s`;
-        effects.appendChild(shape);
+        effects.appendChild(shape); // Append shape to effects
     }
 }
 
-// Handle image upload
-document.getElementById('uploadBtn').addEventListener('change', function (event) {
-    const files = event.target.files;
-    if (files.length > 0) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            uploadedPhoto.src = e.target.result; // Correctly set image src
-            greetingContainer.style.display = 'block';
-            createBlastEffect(200); // Trigger effects
-        };
-        reader.readAsDataURL(files[0]);  // Ensure that the file is read properly
+// Text-to-Speech function
+function speakGreeting(text) {
+    if ('speechSynthesis' in window) { // Check if the Web Speech API is supported
+        const speech = new SpeechSynthesisUtterance(text); // Create speech object
+        speech.lang = 'en-US'; // Set language
+        speech.rate = 1; // Set speech rate
+        speech.pitch = 1; // Set pitch
+        window.speechSynthesis.speak(speech); // Speak text
+    } else {
+        alert("Sorry, your browser doesn't support speech synthesis.");
     }
-});
-
-// Clear all the effects and refresh the page
-clearBtn.addEventListener('click', function () {
-    location.reload(); // Refresh the page to clear everything
-});
-
-// Reveal card functionality
-revealBtn.addEventListener('click', function () {
-    const cover = document.getElementById('cover');
-    cover.classList.add('hidden');
-    setTimeout(() => {
-        effects.style.display = 'block';
-        happyBirthdayText.style.display = 'block';
-    }, 2000);
-});
-
-// Update custom text functionality
-updateTextBtn.addEventListener('click', function () {
-    const customText = customTextInput.value;
-    if (customText) {
-        happyBirthdayText.innerHTML = customText;
-    }
-});
+}
 
 // Download the greeting card without header text and with a reveal card option
 downloadBtn.addEventListener('click', function downloadGreetingCard() {
@@ -110,7 +137,7 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
 
             #greetingContainer {
                 position: relative;
-                width: 95%;
+                width: 100%;
                 height: 400px;
                 margin: 0 auto;
                 background-color: #fff;
@@ -228,14 +255,39 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
     <button id="revealBtn" style="text-align:center;">Reveal Card</button>
 
     <script>
-    // Event listener for Reveal Button
+    const audio = new Audio('Devara Release Trailer Bgm Ringtone Download - MobCup.Com.Co.mp3');
+    
+    // Reveal card functionality with text-to-speech and music
     document.getElementById('revealBtn').addEventListener('click', function () {
-        document.getElementById('cover').classList.add('hidden');
+        const cover = document.getElementById('cover');
+        cover.classList.add('hidden');
+
         setTimeout(() => {
             document.getElementById('effects').style.display = 'block';
             document.getElementById('happyBirthdayText').style.display = 'block';
+            audio.currentTime = 0; // Reset to the beginning
+            setTimeout(() => {
+                audio.play(); // Play background music
+            }, 3000); // 3 seconds delay
+
+            // Play the voice for the greeting text
+            const customGreeting = "${customText}"; // Use custom text
+            speakGreeting(customGreeting);
         }, 2000);
     });
+
+    // Text-to-Speech function
+    function speakGreeting(text) {
+        if ('speechSynthesis' in window) { 
+            const speech = new SpeechSynthesisUtterance(text);
+            speech.lang = 'en-US';
+            speech.rate = 1; 
+            speech.pitch = 1; 
+            window.speechSynthesis.speak(speech);
+        } else {
+            alert("Sorry, your browser doesn't support speech synthesis.");
+        }
+    }
 
     // Create a random blast shape
     function createBlastShape() {
@@ -272,7 +324,10 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
         }
     }
 
-    createBlastEffect(200); // Initialize the blast effect
+    createBlastEffect(600);
+    
+    
+    // Initialize the blast effect
     </script>
 
     </body>
