@@ -110,7 +110,7 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
 
             #greetingContainer {
                 position: relative;
-                width: 600px;
+                width: 80%;
                 height: 400px;
                 margin: 0 auto;
                 background-color: #fff;
@@ -187,7 +187,7 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
             position: absolute;
             font-weight:bold;
             font-family: 'Pacifico', cursive;
-            font-size: 48px;
+            font-size: 30px;
             color: red;
             text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2), 8px 8px 0px rgba(0, 0, 0, 0.15);
             bottom: 20px;
@@ -216,7 +216,7 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
 
     <div id="greetingContainer">
         <div id="cover">
-            <h2>Open to Reveal Your Surprise!</h2>
+            <h2 style="font-size:20px;">Open to Reveal Your Surprise!</h2>
         </div>
         <img id="uploadedPhoto" src="${uploadedPhoto.src}" class="uploaded-image">
         <div id="effects">
@@ -225,7 +225,7 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
         <div id="happyBirthdayText">${customText}</div> <!-- Insert custom text here -->
     </div>
 
-    <button id="revealBtn">Reveal Card</button>
+    <button id="revealBtn" style="text-align:center;">Reveal Card</button>
 
     <script>
     // Event listener for Reveal Button
@@ -283,7 +283,7 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'birthday_card.html';
+    a.download = 'Surprise_Gift.html';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
