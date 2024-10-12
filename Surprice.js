@@ -21,7 +21,7 @@ document.getElementById('uploadBtn').addEventListener('change', function (event)
         reader.onload = function (e) {
             uploadedPhoto.src = e.target.result; // Set image source
             greetingContainer.style.display = 'block'; // Show greeting container
-            createBlastEffect(600); // Trigger effects
+            createBlastEffect(200); // Trigger effects
         };
         reader.readAsDataURL(files[0]);
     }
@@ -324,7 +324,7 @@ downloadBtn.addEventListener('click', function downloadGreetingCard() {
         }
     }
 
-    createBlastEffect(600);
+    createBlastEffect(200);
     
     
     // Initialize the blast effect
